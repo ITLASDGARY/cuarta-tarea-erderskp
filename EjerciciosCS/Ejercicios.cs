@@ -24,8 +24,13 @@ namespace EjerciciosCS
         {
             // TODO: Implementar el cálculo del promedio de temperaturas
             double promedio = 0.0; 
-            
-            
+            double suma = 0.0;
+            double[] temperaturas = {20.5,21.5,22.4,23.4,24.4};
+            for (int i=0;i<temperaturas.Length;i++)
+            {
+                suma += temperaturas[i];
+            }
+            promedio = suma / temperaturas.Length;
             return promedio;
         }
 
@@ -45,7 +50,20 @@ namespace EjerciciosCS
         {
             // TODO: Implementar la lista de compras interactiva
             List<string> listaCompras = new List<string>();
-            
+            while (true)
+            {
+                Console.WriteLine("Ingrese productos: ");
+                string productos = Console.ReadLine();
+                if (productos == "salir")
+                {
+                    break;
+                }
+                listaCompras.Add(productos);
+            }
+            foreach (string compras in listaCompras)
+                {
+                    Console.WriteLine(compras);
+                }
 
             return listaCompras;
         }
@@ -71,7 +89,21 @@ namespace EjerciciosCS
             // TODO: Implementar la búsqueda de número en array aleatorio
             bool encontrado = false;
             Random random = new Random();
+            int[] numeros = new int[10];
+            for(int i=0;i<numeros.Length;i++)
+            {
+                numeros[i] = random.Next(0, 101);
+                Console.WriteLine(numeros[i]);
+            }
             
+            for(int i=0;i<numeros.Length;i++)
+            {
+                if (numeros[i] == numeroBuscado)
+                {
+                    return true;
+                }
+                
+            }
 
             return encontrado;
         }
